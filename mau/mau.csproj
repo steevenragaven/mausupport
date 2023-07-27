@@ -76,6 +76,7 @@
     <Content Include="Home.aspx" />
     <Content Include="HtmlPage1.html" />
     <Content Include="logInaspx.aspx" />
+    <Content Include="Notications.aspx" />
     <Content Include="reg.aspx" />
     <Content Include="resetPwd.aspx" />
     <Content Include="StyleSheet1.css" />
@@ -125,6 +126,13 @@
     </Compile>
     <Compile Include="logInaspx.aspx.designer.cs">
       <DependentUpon>logInaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Notications.aspx.cs">
+      <DependentUpon>Notications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Notications.aspx.designer.cs">
+      <DependentUpon>Notications.aspx</DependentUpon>
     </Compile>
     <Compile Include="reg.aspx.cs">
       <DependentUpon>reg.aspx</DependentUpon>
