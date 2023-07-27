@@ -3,39 +3,50 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace mau
 {
     public partial class donorView : System.Web.UI.Page
     {
+        SqlConnection co = new SqlConnection(ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                BindData();
+                Bind();
             }
         }
-
-        private void BindData()
+        private void Bind()
         {
-            string mainCon = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
-
-            using (SqlConnection con = new SqlConnection(mainCon))
+            string maincon = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+            // Create Connection
+            SqlConnection con = new SqlConnection(maincon);
+            // Create Command
+            SqlCommand scmd = new SqlCommand();
+            scmd.CommandText = "select * from dbo.REQUESTSUBMISSION WHERE ISACTIVE='TRUE'";
+            scmd.Connection = con;
+            // Create DataAdapter named dad (Refer to slide 7)
+            SqlDataAdapter da = new SqlDataAdapter(scmd);
+            //Create DataSet/DataTable named dtMovies
+            DataTable dt = new DataTable();
+            //Populate the datatable using the Fill()
+            using (da)
             {
-                string query = "SELECT * FROM dbo.REQUESTSUBMISSION WHERE ISACTIVE = 1";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-                    {
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-
-                        MyRepeater.DataSource = dt;
-                        MyRepeater.DataBind();
-                    }
-                }
+                da.Fill(dt);
             }
+            //Bind datatable to gridview
+            MyRepeater.DataSource = dt;
+            MyRepeater.DataBind();
+        }
+
+        
+
+        protected void btnDonate_Click1(object sender, EventArgs e)
+        {
+            int ID = Convert.ToInt32((sender as Button).CommandArgument);
+
+            Response.Redirect($"donationDetail.aspx?id={ID}");
         }
     }
 }
