@@ -105,30 +105,29 @@
         </div>
     </div>--%>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-<asp:Repeater ID="MyRepeater" runat="server">
-    <ItemTemplate>
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title"><%# Eval("TITLE") %></h3>
-                <p class="card-text">Description: <%# Eval("DESCRIPTIONS") %></p>
-                <p class="card-text">Category: <%# Eval("CATEGORY") %></p>
-                <p class="card-text">User Name: <%# Eval("U_NAME") %></p>
-                <p class="card-text">Client ID: <%# Eval("C_ID") %></p>
-                <p class="card-text">Target Donation: <%# Eval("TARGETDONATION") %></p>
-                <p class="card-text">Deadline: <%# Eval("DEADLINE") %></p>
-                <p class="card-text">Urgency: <%# Eval("URGENCY") %></p>
-                <p class="card-text">Is Active: <%# Eval("ISACTIVE") %></p>
-            </div>
-        </div>
-        <br />
-    </ItemTemplate>
-</asp:Repeater>
-                     </div>
-                
-         </div>
-    </div>
+  <div class="row">
+      <div class="col-md-4">
+            <asp:Repeater ID="MyRepeater" runat="server">
+
+                <ItemTemplate>
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title"><%# Eval("TITLE") %></h3>
+                            <p class="card-text">Category:</p><p class="card-text"><%# Eval("CATEGORY") %></p>
+                            <p class="card-text">Target Donation:</p><p class="card-text"><%# Eval("TARGETDONATION") %></p>
+                            <p class="card-text">Deadline:</p><p class="card-text"><%# Eval("DEADLINE") %></p>
+                            <asp:Button ID="btnDonate" runat="server" Text="Donate" OnClick="btnDonate_Click1" CommandArgument='<%# Eval("ID") %>' />
+                        </div>
+                    </div>
+                </ItemTemplate>
+
+                <SeparatorTemplate>
+                    <hr />
+                </SeparatorTemplate>
+            </asp:Repeater>
+      </div>         
+   </div>
+</div>
     <%--<asp:GridView
             ID="GrdView1"
             AutoGenerateColumns="false"
