@@ -110,7 +110,6 @@
     </Compile>
     <Compile Include="donationDetail.aspx.cs">
       <DependentUpon>donationDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="donationDetail.aspx.designer.cs">
       <DependentUpon>donationDetail.aspx</DependentUpon>

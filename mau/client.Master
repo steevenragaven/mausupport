@@ -7,44 +7,52 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <!-- Include Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-lrDtn/4l7FLd8vbrjsojqLM7fZmjTYLhEk/9IquW0Hkx/jjFA8EvMRRkXurGMHJoPoyuTFxHyO+zW5w2tEz+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .nav{
-            background-color:red;
+        .nav {
+            background-color: red;
         }
     </style>
 </head>
 <body>
     <nav style="background-color:#FF6347;" class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Mausupport</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Request Help</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">My Requests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Notifications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="logInaspx.aspx">Sign Out</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mausupport</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Request Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">My Requests</a>
+                    </li>
+                   
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logInaspx.aspx">Sign Out</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="Notications.aspx">
+                    
+                            Notifications
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <br />
     <form id="form1" runat="server">
         <div>
